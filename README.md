@@ -33,10 +33,13 @@ Python has functional programming features - limited lambdas, etc. However, the 
 Metaclasses are templates for classes. Just as objects are instances of classes, classes are instances of metaclasses.
 
 ## Object Lifecycle
+`__new__` is called before `__init__` on Python object creation. __new__ is called for the creation of a new class, while __init__ is called after the class is created, to perform additional initialization before the class is handed to the caller: this means that you can override `__new__` for custom implementations before the object actually initializes (like returning an already allocated object instead of allocating a new one). When overriding `__new__()` you can change things like the ‘name’, ‘bases’ and ‘namespace’ arguments before you call the super constructor and it will have an effect, but doing the same thing in `__init__()` you won’t get any results from the constructor call.
 
 ## Classes as Callables
+Classes are "syntactic sugar" for functions. Through closure, we can achieve the same effect as a class structure where we define and make methods available, which have access to enclosed variables that are accessible only to their own context.
 
 ## Class as Type Wrapper
+Underneath the hood, defining `class` is just calling `type` to instantiate the object. You can define a class in the same way by calling the `type` function directly and defining the members of that class as arguments.
 
 ## Class Templates
 
