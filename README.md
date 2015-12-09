@@ -5,16 +5,14 @@
 
 This workshop explores metaprogramming in a Python context, specifically metaclasses. Metaclasses are a powerful way to greatly reduce the amount of boilerplate code in object oriented programming. With careful use and documentation, programs become easier to understand and more maintainable.
 
+Python 3
+
 ## What You'll Learn
 
 1. Object Lifecycle - `__new__` vs. `__init__`
 2. Classes as Callables - `__call__` vs. `class:`
-3. Classes as Syntactic Sugar - `type()` vs. `class:`
-4. Class Templates with Extensions - `metaclass=`
-
-## Table of Contents
-
-1. Intro to Metaprogramming and Metaclasses
+3. Class as Type Wrapper - `type()` vs. `class:`
+4. Class Templates - `metaclass=`
 
 ## Intro to Metaprogramming and Metaclasses
 
@@ -33,3 +31,5 @@ Python has functional programming features - limited lambdas, etc. However, the 
 ### What are Metaclasses?
 
 Metaclasses are
+
+## More Resources

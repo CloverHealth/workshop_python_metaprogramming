@@ -4,34 +4,25 @@ import datetime
 
 class WordSequence(object):
 
-    def __init__(self, *words):
-        self._value = tuple(words)
-
-    @property
-    def value(self):
-        return self._value
+    def __init__(self, word0, word1, word2):
+        self._value = (word0, word1, word2)
 
 
 class FlyweightWordSequence(object):
 
     cache = {}
 
-    def __new__(cls, *words):
+    def __new__(cls, word0, word1, word2):
         word_cache = cls.cache
-        word_index = 0
-        while word_index < len(words):
-            print(type(words[word_index]))
-            word_cache = word_cache.get(words[word_index])
-            if not word_cache:
-                value = tuple(words)
-                word_new_index = word_index
-                while word_new_index < len(words) - 1:
-                    next_word_cache = {}
-                    word_cache[words[word_new_index]] = next_word_cache
-                    word_cache = next_word_cache
-                word_cache[words[word_new_index]] = value
-                return value
-            word_index += 1
+        if not word0 in word_cache:
+            word_cache[word0] = {}
+        word_cache = word_cache[word0]
+        if not word1 in word_cache:
+            word_cache[word1] = {}
+        word_cache = word_cache[word1]
+        if not word2 in word_cache:
+            word_cache[word2] = (word0, word1, word2)
+        return word_cache[word2]
 
     @property
     def value(self):
@@ -46,7 +37,7 @@ def count_word_sequences(path, class_):
         while line != '':
             words += line.split(' ')
             while len(words) >= 3:
-                word_sequence = class_(*words[:3])
+                word_sequence = class_(words[0], words[1], words[2])
                 counter[word_sequence] += 1
                 words = words[1:]
             line = f.readline()
