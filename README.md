@@ -5,7 +5,7 @@
 
 This workshop explores metaprogramming in a Python context, specifically metaclasses. Metaclasses are a powerful way to greatly reduce the amount of boilerplate code in object oriented programming. With careful use and documentation, programs become easier to understand and more maintainable.
 
-Python 3
+Although this is broadly applicable to both Python 2 and Python 3, the specifics of syntax (and examples) are geared towards Python 3.
 
 ## What You'll Learn
 
@@ -30,6 +30,14 @@ Python has functional programming features - limited lambdas, etc. However, the 
 
 ### What are Metaclasses?
 
-Metaclasses are
+Metaclasses are templates for classes. Just as objects are instances of classes, classes are instances of metaclasses.
+
+## Object Lifecycle
+
+## Classes as Callables
+
+## Class as Type Wrapper
+
+## Class Templates
 
 ## More Resources
