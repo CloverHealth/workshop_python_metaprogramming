@@ -87,7 +87,7 @@ Underneath the hood, defining `class` is just calling `type` to instantiate the 
 
 ### Example
 
-See the [03_classes_vs_type_wrapper](03_classes_vs_type_wrapper/classes_vs_type_wrapper.py) Python 3 file.
+See the [03_class_vs_type_wrapper](03_class_vs_type_wrapper/class_vs_type_wrapper.py) Python 3 file.
 
 #### Notes
 
